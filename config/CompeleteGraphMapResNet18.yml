@@ -1,0 +1,28 @@
+# Architecture
+arch: GraphMapResNet18
+
+# ===== Dataset ===== #
+data: dataset/
+set: cifar10
+name: GraphMapResNet18
+
+# ===== Learning Rate Policy ======== #
+optimizer: adam
+lr: 0.001
+lr_policy: cosine_lr
+
+# ===== Network training config ===== #
+epochs: 100
+weight_decay: 0 #0.0001
+momentum: 0.9
+batch_size: 256
+
+# ===== Sparsity =========== #
+init: kaiming_normal
+nonlinearity: relu
+scale_fan: True
+
+# ===== Hardware setup ===== #
+workers: 20
+# ===== GraphMapMethod ===== #
+message_type: None

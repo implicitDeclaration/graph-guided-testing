@@ -1,0 +1,28 @@
+# Architecture
+arch: GraphMapVGG19
+
+# ===== Dataset ===== #
+data: dataset/
+set: flower
+name: GraphMapVGG19
+num_classes: 102
+# ===== Learning Rate Policy ======== #
+optimizer: adam
+lr: 0.0001
+lr_policy: cosine_lr
+
+# ===== Network training config ===== #
+epochs: 100
+weight_decay: 0 #0.0001
+momentum: 0.9
+batch_size: 32
+
+# ===== Sparsity =========== #
+init: kaiming_normal
+nonlinearity: relu
+scale_fan: True
+
+# ===== Hardware setup ===== #
+workers: 1
+# ===== GraphMapMethod ===== #
+message_type: None
